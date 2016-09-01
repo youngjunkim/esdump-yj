@@ -146,9 +146,9 @@ elasticdump.prototype.dump = function(callback, continuing, limit, offset, total
                         delete data[i]._source.words;
                         data01.push({
                             id: data[i]._source.external_id,
-                            estimated_funding: (data[i]._source.meta.estimated_funding) ? data[i]._source.meta.estimated_funding: 0,
-                            award_floor: (data[i]._source.meta.award_floor) ? data[i]._source.meta.award_floor: 0,
-                            award_ceiling: (data[i]._source.meta.award_ceiling) ? data[i]._source.meta.award_ceiling: 0,
+                            estimated_funding: (data[i]._source.meta.estimated_funding) ? (data[i]._source.meta.estimated_funding != 'none') ? data[i]._source.meta.estimated_funding : 0 : 0,
+                            award_floor: (data[i]._source.meta.award_floor) ? (data[i]._source.meta.award_floor != 'none') ? data[i]._source.meta.award_floor : 0 : 0,
+                            award_ceiling: (data[i]._source.meta.award_ceiling) ? (data[i]._source.meta.award_ceiling != 'none') ? data[i]._source.meta.award_ceiling : 0 : 0,
                         });
                     }
                 }
