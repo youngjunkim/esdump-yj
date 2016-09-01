@@ -138,9 +138,9 @@ elasticdump.prototype.dump = function(callback, continuing, limit, offset, total
 
                     if (data[i]._source.title && data[i]._source.words) {
                         //for source_type grants_* 
-                        if (typeof data[i]._source.meta.award_floor != "number") delete data[i]._source.meta.award_floor;
-                        if (typeof data[i]._source.meta.award_ceiling != "number") delete data[i]._source.meta.award_ceiling;
-                        if (typeof data[i]._source.meta.estimated_funding != "number") delete data[i]._source.meta.estimated_funding;
+                        // if (typeof data[i]._source.meta.award_floor != "number") delete data[i]._source.meta.award_floor;
+                        // if (typeof data[i]._source.meta.award_ceiling != "number") delete data[i]._source.meta.award_ceiling;
+                        // if (typeof data[i]._source.meta.estimated_funding != "number") delete data[i]._source.meta.estimated_funding;
 
                         delete data[i]._source.top_words;
                         delete data[i]._source.words;
