@@ -143,7 +143,12 @@ elasticdump.prototype.dump = function(callback, continuing, limit, offset, total
                         if (typeof data[i]._source.meta.estimated_funding != "number") delete data[i]._source.meta.estimated_funding;
 
                         delete data[i]._source.top_words;
-                        data01.push(data[i]);
+                        delete data[i]._source.words;
+                        data01.push({
+                            id: data[i]._source.external_id,
+                            enrollment: (data[i]._source.meta.enrollment) ? data[i]._source.meta.enrollment: 0,
+                            start_date: (data[i]._source.start_date) ? data[i]._source.start_date: 0
+                        });
                     }
                 }
 
