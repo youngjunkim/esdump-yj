@@ -207,7 +207,7 @@ elasticdump.prototype.dump = function(callback, continuing, limit, offset, total
                             }
 
                             //create_time
-                            if(!data[i].source.create_time) data[i].source.create_time = new Date().getTime() ;
+                            if(!data[i]._source.create_time) data[i]._source.create_time = new Date().getTime() ;
 
                             delete data[i]._source.top_words;
                             data01.push(data[i]);
